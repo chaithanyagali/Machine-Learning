@@ -17,3 +17,24 @@ sqoop-import --connect jdbc:mysql://cdb22dw011.c0lf9xyp8cv9.ap-south-1.rds.amazo
 
 
 cp /home/ubh01/apache-hive-2.3.2-bin/lib/hive-common-2.3.2.jar /home/ubh01/sqoop-1.4.7.bin__hadoop-2.6.0/lib/
+
+create table karthick(
+age int,
+gender string,
+name string,
+course string,
+roll int,
+marks int,
+email string)
+row format delimited
+fields terminated by ','
+TBLPROPERTIES ("skip.header.line.count"="1");
+=============================================================================
+# Load the data from HDFS Location -> move the file from original location to hive architecture local
+#if you drop the data original file is lost
+load data inpath '/karthick/StudentData.csv' overwrite into table karthick;
+=============================================================================
+#Load from the Local File System
+#Keep the original file from local file system
+load data local inpath '/home/ubh01/Desktop/StudentData.csv' overwrite into table karthick;
+============================
