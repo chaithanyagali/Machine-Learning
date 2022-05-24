@@ -38,3 +38,9 @@ load data inpath '/karthick/StudentData.csv' overwrite into table karthick;
 #Keep the original file from local file system
 load data local inpath '/home/ubh01/Desktop/StudentData.csv' overwrite into table karthick;
 ============================
+export PIG_HOME=/home/ubh01/pig/pig-0.17.0
+export PATH=$PATH:/home/ubh01/pig/pig-0.17.0/bin
+export PIG_CLASSPATH=$HADOOP_HOME/conf
+ 
+#JAVA_HOME
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
